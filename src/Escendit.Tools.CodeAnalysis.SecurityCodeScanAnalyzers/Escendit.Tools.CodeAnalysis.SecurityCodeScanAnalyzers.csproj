@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <DevelopmentDependency>true</DevelopmentDependency>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+        <NoWarn>$(NoWarn);NU5128</NoWarn>
+        <IsPackable>true</IsPackable>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <Description>Enforce our coding practices in your projects with our NuGet package's default settings for Security Code Scan Analyzers.</Description>
+        <PackageTags>analyzers;security;scan;code;defaults</PackageTags>
+    </PropertyGroup>
+    <ItemGroup>
+        <!-- TFM -->
+        <None Pack="true" PackagePath="build" Include="Escendit.Tools.CodeAnalysis.SecurityCodeScanAnalyzers.props" />
+        <None Pack="true" PackagePath="build" Include="Escendit.Tools.CodeAnalysis.SecurityCodeScanAnalyzers.targets" />
+        <!-- TFMs -->
+        <None Pack="true" PackagePath="buildMultiTargeting" Include="Escendit.Tools.CodeAnalysis.SecurityCodeScanAnalyzers.props" />
+        <None Pack="true" PackagePath="buildMultiTargeting" Include="Escendit.Tools.CodeAnalysis.SecurityCodeScanAnalyzers.targets" />
+        <!-- Transitive -->
+        <None Pack="true" PackagePath="buildTransitive" Include="Escendit.Tools.CodeAnalysis.SecurityCodeScanAnalyzers.props" />
+        <None Pack="true" PackagePath="buildTransitive" Include="Escendit.Tools.CodeAnalysis.SecurityCodeScanAnalyzers.targets" />
+        <!-- Assets -->
+        <None Pack="true" PackagePath="" Include="Escendit.Tools.CodeAnalysis.SecurityCodeScanAnalyzers.globalconfig" />
+        <!-- README -->
+        <None Pack="true" PackagePath="" Include="$(SolutionDir)/README.md" />
+    </ItemGroup>
+</Project>
